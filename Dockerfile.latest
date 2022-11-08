@@ -1,0 +1,5 @@
+FROM ocaml/opam:debian
+RUN sudo ln -f /usr/bin/opam-2.1 /usr/bin/opam
+RUN opam init --reinit -n
+RUN sudo apt-get update && sudo apt-get install -yy syslinux fdisk dosfstools pkg-config libseccomp-dev libgmp-dev m4
+RUN opam install mirage ocaml-solo5
